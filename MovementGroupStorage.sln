@@ -31,6 +31,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovementGroupStorage.Infras
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovementGroupStorage.Presentation.Models", "Presentation\MovementGroupStorage.Presentation.Models\MovementGroupStorage.Presentation.Models.csproj", "{06E0B9A0-952F-472B-90FE-0D9083C06D97}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovementGroupStorage.API", "MovementGroupStorage.API\MovementGroupStorage.API.csproj", "{13F72C19-ED35-4338-BA30-BA23117E27AE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -73,6 +75,10 @@ Global
 		{06E0B9A0-952F-472B-90FE-0D9083C06D97}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{06E0B9A0-952F-472B-90FE-0D9083C06D97}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{06E0B9A0-952F-472B-90FE-0D9083C06D97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13F72C19-ED35-4338-BA30-BA23117E27AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13F72C19-ED35-4338-BA30-BA23117E27AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13F72C19-ED35-4338-BA30-BA23117E27AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13F72C19-ED35-4338-BA30-BA23117E27AE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
