@@ -1,0 +1,6 @@
+services:
+  movementgroupstorage.api:
+    image: ${DOCKER_REGISTRY-}movementgroupstorageapi
+    build:
+      context: .
+      dockerfile: MovementGroupStorage.API/Dockerfile

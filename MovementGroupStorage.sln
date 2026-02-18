@@ -1,0 +1,113 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{F05ECF77-99ED-4FFF-8B21-547A8E72901F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{A4BF74E2-CF63-4B20-B1C9-029BF685C511}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{A9E6C843-81B2-4084-9187-FB792D51409F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{497270FF-3F29-4E8B-BB4A-E9A7A9D1ACC3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovementGroupStorage.Application.Models", "Application\MovementGroupStorage.Application.Models\MovementGroupStorage.Application.Models.csproj", "{37EF6091-CEB4-4718-B7AD-BF4F72E8269F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovementGroupStorage.Application.Services", "Application\MovementGroupStorage.Application.Services\MovementGroupStorage.Application.Services.csproj", "{28BF6603-EA24-4FD8-A663-20AC7C5CFDA0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovementGroupStorage.Application.Managers", "Application\MovementGroupStorage.Application.Managers\MovementGroupStorage.Application.Managers.csproj", "{22364FCA-BBE7-49EE-BB80-0F93C2A22FD2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovementGroupStorage.Domain.Entities", "Domain\MovementGroupStorage.Domain.Entities\MovementGroupStorage.Domain.Entities.csproj", "{612FC60F-63EB-4E75-9398-243F0AFDCB94}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovementGroupStorage.Domain.Repositories", "Domain\MovementGroupStorage.Domain.Repositories\MovementGroupStorage.Domain.Repositories.csproj", "{50D8D402-43FC-486D-A9E6-0C6796B67C8D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovementGroupStorage.Infrastructure.Application.Managers", "Infrastructure\MovementGroupStorage.Infrastructure.Application.Managers\MovementGroupStorage.Infrastructure.Application.Managers.csproj", "{A0A6E858-C84B-435E-A23A-150289E346C5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovementGroupStorage.Infrastructure.Application.Services", "Infrastructure\MovementGroupStorage.Infrastructure.Application.Services\MovementGroupStorage.Infrastructure.Application.Services.csproj", "{6BAF2E69-AF1E-43D2-B3A1-1C5075597060}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovementGroupStorage.Infrastructure.Domain.Repositories", "Infrastructure\MovementGroupStorage.Infrastructure.Domain.Repositories\MovementGroupStorage.Infrastructure.Domain.Repositories.csproj", "{7798BC4A-9D21-4F7D-94AA-24349FF40163}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovementGroupStorage.Presentation.Models", "Presentation\MovementGroupStorage.Presentation.Models\MovementGroupStorage.Presentation.Models.csproj", "{06E0B9A0-952F-472B-90FE-0D9083C06D97}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovementGroupStorage.API", "MovementGroupStorage.API\MovementGroupStorage.API.csproj", "{13F72C19-ED35-4338-BA30-BA23117E27AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovementGroupStorage.Application.UnitTests", "Tests\MovementGroupStorage.Application.UnitTests\MovementGroupStorage.Application.UnitTests.csproj", "{614F7157-B064-4947-B5BA-F3A12E3645A0}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{81DDED9D-158B-E303-5F62-77A2896D2A5A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{37EF6091-CEB4-4718-B7AD-BF4F72E8269F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37EF6091-CEB4-4718-B7AD-BF4F72E8269F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37EF6091-CEB4-4718-B7AD-BF4F72E8269F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37EF6091-CEB4-4718-B7AD-BF4F72E8269F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28BF6603-EA24-4FD8-A663-20AC7C5CFDA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28BF6603-EA24-4FD8-A663-20AC7C5CFDA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28BF6603-EA24-4FD8-A663-20AC7C5CFDA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28BF6603-EA24-4FD8-A663-20AC7C5CFDA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22364FCA-BBE7-49EE-BB80-0F93C2A22FD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22364FCA-BBE7-49EE-BB80-0F93C2A22FD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22364FCA-BBE7-49EE-BB80-0F93C2A22FD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22364FCA-BBE7-49EE-BB80-0F93C2A22FD2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{612FC60F-63EB-4E75-9398-243F0AFDCB94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{612FC60F-63EB-4E75-9398-243F0AFDCB94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{612FC60F-63EB-4E75-9398-243F0AFDCB94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{612FC60F-63EB-4E75-9398-243F0AFDCB94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50D8D402-43FC-486D-A9E6-0C6796B67C8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50D8D402-43FC-486D-A9E6-0C6796B67C8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50D8D402-43FC-486D-A9E6-0C6796B67C8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50D8D402-43FC-486D-A9E6-0C6796B67C8D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0A6E858-C84B-435E-A23A-150289E346C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0A6E858-C84B-435E-A23A-150289E346C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0A6E858-C84B-435E-A23A-150289E346C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0A6E858-C84B-435E-A23A-150289E346C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6BAF2E69-AF1E-43D2-B3A1-1C5075597060}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BAF2E69-AF1E-43D2-B3A1-1C5075597060}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BAF2E69-AF1E-43D2-B3A1-1C5075597060}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BAF2E69-AF1E-43D2-B3A1-1C5075597060}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7798BC4A-9D21-4F7D-94AA-24349FF40163}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7798BC4A-9D21-4F7D-94AA-24349FF40163}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7798BC4A-9D21-4F7D-94AA-24349FF40163}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7798BC4A-9D21-4F7D-94AA-24349FF40163}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06E0B9A0-952F-472B-90FE-0D9083C06D97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06E0B9A0-952F-472B-90FE-0D9083C06D97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06E0B9A0-952F-472B-90FE-0D9083C06D97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06E0B9A0-952F-472B-90FE-0D9083C06D97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13F72C19-ED35-4338-BA30-BA23117E27AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13F72C19-ED35-4338-BA30-BA23117E27AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13F72C19-ED35-4338-BA30-BA23117E27AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13F72C19-ED35-4338-BA30-BA23117E27AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{614F7157-B064-4947-B5BA-F3A12E3645A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{614F7157-B064-4947-B5BA-F3A12E3645A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{614F7157-B064-4947-B5BA-F3A12E3645A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{614F7157-B064-4947-B5BA-F3A12E3645A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81DDED9D-158B-E303-5F62-77A2896D2A5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81DDED9D-158B-E303-5F62-77A2896D2A5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81DDED9D-158B-E303-5F62-77A2896D2A5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81DDED9D-158B-E303-5F62-77A2896D2A5A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{37EF6091-CEB4-4718-B7AD-BF4F72E8269F} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{28BF6603-EA24-4FD8-A663-20AC7C5CFDA0} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{22364FCA-BBE7-49EE-BB80-0F93C2A22FD2} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{612FC60F-63EB-4E75-9398-243F0AFDCB94} = {F05ECF77-99ED-4FFF-8B21-547A8E72901F}
+		{50D8D402-43FC-486D-A9E6-0C6796B67C8D} = {F05ECF77-99ED-4FFF-8B21-547A8E72901F}
+		{A0A6E858-C84B-435E-A23A-150289E346C5} = {A4BF74E2-CF63-4B20-B1C9-029BF685C511}
+		{6BAF2E69-AF1E-43D2-B3A1-1C5075597060} = {A4BF74E2-CF63-4B20-B1C9-029BF685C511}
+		{7798BC4A-9D21-4F7D-94AA-24349FF40163} = {A4BF74E2-CF63-4B20-B1C9-029BF685C511}
+		{06E0B9A0-952F-472B-90FE-0D9083C06D97} = {A9E6C843-81B2-4084-9187-FB792D51409F}
+		{614F7157-B064-4947-B5BA-F3A12E3645A0} = {497270FF-3F29-4E8B-BB4A-E9A7A9D1ACC3}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F3E0FB5A-F62D-499A-AD34-A3FC3181C5E3}
+	EndGlobalSection
+EndGlobal
