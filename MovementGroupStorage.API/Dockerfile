@@ -13,6 +13,10 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
 COPY ["MovementGroupStorage.API/MovementGroupStorage.API.csproj", "MovementGroupStorage.API/"]
+COPY ["Application/MovementGroupStorage.Application.Managers/MovementGroupStorage.Application.Managers.csproj", "Application/MovementGroupStorage.Application.Managers/"]
+COPY ["Application/MovementGroupStorage.Application.Models/MovementGroupStorage.Application.Models.csproj", "Application/MovementGroupStorage.Application.Models/"]
+COPY ["Application/MovementGroupStorage.Application.Services/MovementGroupStorage.Application.Services.csproj", "Application/MovementGroupStorage.Application.Services/"]
+COPY ["Presentation/MovementGroupStorage.Presentation.Models/MovementGroupStorage.Presentation.Models.csproj", "Presentation/MovementGroupStorage.Presentation.Models/"]
 RUN dotnet restore "./MovementGroupStorage.API/MovementGroupStorage.API.csproj"
 COPY . .
 WORKDIR "/src/MovementGroupStorage.API"
