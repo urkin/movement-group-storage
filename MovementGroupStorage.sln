@@ -19,6 +19,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovementGroupStorage.Applic
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovementGroupStorage.Application.Managers", "Application\MovementGroupStorage.Application.Managers\MovementGroupStorage.Application.Managers.csproj", "{22364FCA-BBE7-49EE-BB80-0F93C2A22FD2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovementGroupStorage.Domain.Entities", "Domain\MovementGroupStorage.Domain.Entities\MovementGroupStorage.Domain.Entities.csproj", "{612FC60F-63EB-4E75-9398-243F0AFDCB94}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovementGroupStorage.Domain.Repositories", "Domain\MovementGroupStorage.Domain.Repositories\MovementGroupStorage.Domain.Repositories.csproj", "{50D8D402-43FC-486D-A9E6-0C6796B67C8D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +41,14 @@ Global
 		{22364FCA-BBE7-49EE-BB80-0F93C2A22FD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{22364FCA-BBE7-49EE-BB80-0F93C2A22FD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{22364FCA-BBE7-49EE-BB80-0F93C2A22FD2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{612FC60F-63EB-4E75-9398-243F0AFDCB94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{612FC60F-63EB-4E75-9398-243F0AFDCB94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{612FC60F-63EB-4E75-9398-243F0AFDCB94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{612FC60F-63EB-4E75-9398-243F0AFDCB94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50D8D402-43FC-486D-A9E6-0C6796B67C8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50D8D402-43FC-486D-A9E6-0C6796B67C8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50D8D402-43FC-486D-A9E6-0C6796B67C8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50D8D402-43FC-486D-A9E6-0C6796B67C8D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -45,6 +57,8 @@ Global
 		{37EF6091-CEB4-4718-B7AD-BF4F72E8269F} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{28BF6603-EA24-4FD8-A663-20AC7C5CFDA0} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{22364FCA-BBE7-49EE-BB80-0F93C2A22FD2} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{612FC60F-63EB-4E75-9398-243F0AFDCB94} = {F05ECF77-99ED-4FFF-8B21-547A8E72901F}
+		{50D8D402-43FC-486D-A9E6-0C6796B67C8D} = {F05ECF77-99ED-4FFF-8B21-547A8E72901F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F3E0FB5A-F62D-499A-AD34-A3FC3181C5E3}
