@@ -1,4 +1,5 @@
-﻿using MovementGroupStorage.Application.Managers;
+﻿using Microsoft.Extensions.Options;
+using MovementGroupStorage.Application.Managers;
 using MovementGroupStorage.Application.Models;
 using MovementGroupStorage.Application.Services;
 using MovementGroupStorage.Infrastructure.Application.Managers;
@@ -30,6 +31,17 @@ namespace Microsoft.Extensions.DependencyInjection
             services.AddOptions<CapacityTtlCacheServiceOptions>()
                 .BindConfiguration("CapacityTtlCacheServiceOptions")
                 .ValidateOnStart();
+
+            // Use Chain of Responsibility Design Pattern to validate `CapacityTtlCacheServiceOptions`.
+            // Learn more about Strategy Design Pattern: https://refactoring.guru/design-patterns/chain-of-responsibility/csharp/example
+            services
+                .AddSingleton<IValidateOptions<CapacityTtlCacheServiceOptions>, CapacityTtlCacheServiceOptionsCapacityRangeHasValueValidator>()
+                .AddSingleton<IValidateOptions<CapacityTtlCacheServiceOptions>, CapacityTtlCacheServiceOptionsCapacityRangeMaxGreaterThanZeroValidator>()
+                .AddSingleton<IValidateOptions<CapacityTtlCacheServiceOptions>, CapacityTtlCacheServiceOptionsCapacityRangeMinGreaterThanZeroValidator>()
+                .AddSingleton<IValidateOptions<CapacityTtlCacheServiceOptions>, CapacityTtlCacheServiceOptionsCapacityRangeCorrectValidator>()
+                .AddSingleton<IValidateOptions<CapacityTtlCacheServiceOptions>, CapacityTtlCacheServiceOptionsCapacityGreaterThanZeroValidator>()
+                .AddSingleton<IValidateOptions<CapacityTtlCacheServiceOptions>, CapacityTtlCacheServiceOptionsCapacityMinValueValidator>()
+                .AddSingleton<IValidateOptions<CapacityTtlCacheServiceOptions>, CapacityTtlCacheServiceOptionsCapacityMaxValueValidator>();
 
             services.AddSingleton(
                 typeof(ICacheService<>),
