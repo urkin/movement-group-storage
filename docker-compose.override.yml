@@ -4,6 +4,10 @@ services:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_HTTP_PORTS=8080
       - ASPNETCORE_HTTPS_PORTS=8081
+      - Redis__ConnectionString=redis:6379
+      - CapacityTtlCacheServiceOptions__Capacity=10
+      - CapacityTtlCacheServiceOptions__CapacityRange__Min=3
+      - CapacityTtlCacheServiceOptions__CapacityRange__Max=100
     ports:
       - "8080"
       - "8081"
@@ -12,3 +16,20 @@ services:
       - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
       - ${APPDATA}/ASP.NET/Https:/home/app/.aspnet/https:ro
       - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+    depends_on:
+      - redis
+    networks:
+      - backend
+
+  redis:
+    image: redis:7-alpine
+    container_name: redis-cache
+    restart: always
+    ports:
+      - "6379:6379"
+    networks:
+      - backend
+
+networks:
+  backend:
+    driver: bridge
