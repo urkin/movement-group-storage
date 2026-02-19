@@ -16,6 +16,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Application\MovementGroupStorage.Application.Managers\MovementGroupStorage.Application.Managers.csproj" />
+    <ProjectReference Include="..\Infrastructure\MovementGroupStorage.Infrastructure.Application.Managers\MovementGroupStorage.Infrastructure.Application.Managers.csproj" />
     <ProjectReference Include="..\Infrastructure\MovementGroupStorage.Infrastructure.Application.Services\MovementGroupStorage.Infrastructure.Application.Services.csproj" />
     <ProjectReference Include="..\Presentation\MovementGroupStorage.Presentation.Models\MovementGroupStorage.Presentation.Models.csproj" />
   </ItemGroup>
