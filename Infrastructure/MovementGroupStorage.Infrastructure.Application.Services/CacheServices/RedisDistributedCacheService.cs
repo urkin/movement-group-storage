@@ -35,6 +35,11 @@ namespace MovementGroupStorage.Infrastructure.Application.Services
         /// <inheritdoc/>
         public async Task<ApplicationServiceResult> SetAsync<TValue>(string key, TValue value)
         {
+            if (value == null || string.IsNullOrWhiteSpace(key))
+            {
+                return new ApplicationServiceResult(ApplicationServiceResultStatus.InvalidInput);
+            }
+
             var bytes = JsonSerializer.SerializeToUtf8Bytes(value);
             await _cache.SetAsync(key, bytes);
             return new ApplicationServiceResult(ApplicationServiceResultStatus.Succeeded);
@@ -43,6 +48,11 @@ namespace MovementGroupStorage.Infrastructure.Application.Services
         /// <inheritdoc/>
         public async Task<ApplicationServiceResult> GetAsync<TValue>(string key)
         {
+            if (string.IsNullOrWhiteSpace(key))
+            {
+                return new ApplicationServiceResult(ApplicationServiceResultStatus.InvalidInput);
+            }
+
             var bytes = await _cache.GetAsync(key);
             var value = JsonSerializer.Deserialize<TValue>(bytes);
             return new ApplicationServiceResult(value, ApplicationServiceResultStatus.Succeeded);
