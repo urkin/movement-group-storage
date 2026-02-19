@@ -54,6 +54,11 @@ namespace MovementGroupStorage.Infrastructure.Application.Services
             }
 
             var bytes = await _cache.GetAsync(key);
+            if (bytes == null)
+            {
+                return new ApplicationServiceResult(ApplicationServiceResultStatus.DoesNotExist);
+            }
+
             var value = JsonSerializer.Deserialize<TValue>(bytes);
             return new ApplicationServiceResult(value, ApplicationServiceResultStatus.Succeeded);
         }
