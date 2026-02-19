@@ -23,7 +23,7 @@ namespace MovementGroupStorage.Infrastructure.Application.Services
         public int Count => (int?)_database.Execute("DBSIZE") ?? 0;
 
         /// <inheritdoc/>
-        public CacheServiceType Type => CacheServiceType.Memory;
+        public CacheServiceType Type => CacheServiceType.Distributed;
 
         /// <inheritdoc/>
         public async Task<ApplicationServiceResult> RemoveAsync(string key)
