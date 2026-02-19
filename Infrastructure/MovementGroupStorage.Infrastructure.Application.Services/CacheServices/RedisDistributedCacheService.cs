@@ -6,6 +6,9 @@ using System.Text.Json;
 
 namespace MovementGroupStorage.Infrastructure.Application.Services
 {
+    /// <summary>
+    /// A distributed cache service using Redis.
+    /// </summary>
     public class RedisDistributedCacheService : ICacheService<string>
     {
         private readonly IDatabase _database;
