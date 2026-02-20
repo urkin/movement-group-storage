@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Caching.Distributed;
+using Microsoft.Extensions.Options;
 using MovementGroupStorage.Application.Models;
 using MovementGroupStorage.Application.Services;
 using StackExchange.Redis;
@@ -13,13 +14,16 @@ namespace MovementGroupStorage.Infrastructure.Application.Services
     {
         private readonly IDatabase _database;
         private readonly IDistributedCache _cache;
+        private readonly DistributedCacheEntryOptions _options;
 
-        public RedisDistributedCacheService(IDistributedCache cache, IConnectionMultiplexer redis)
+        public RedisDistributedCacheService(
+            IDistributedCache cache,
+            IConnectionMultiplexer redis,
+            IOptions<DistributedCacheEntryOptions> options)
         {
-            ArgumentNullException.ThrowIfNull(redis);
-
-            _database = redis.GetDatabase();
             _cache = cache ?? throw new ArgumentNullException(nameof(cache));
+            _options = options?.Value ?? throw new ArgumentNullException(nameof(options));
+            _database = redis?.GetDatabase() ?? throw new ArgumentNullException(nameof(redis));
         }
 
         /// <inheritdoc/>
@@ -44,7 +48,7 @@ namespace MovementGroupStorage.Infrastructure.Application.Services
             }
 
             var bytes = JsonSerializer.SerializeToUtf8Bytes(value);
-            await _cache.SetAsync(key, bytes);
+            await _cache.SetAsync(key, bytes, _options);
             return new ApplicationServiceResult(ApplicationServiceResultStatus.Succeeded);
         }
 

@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Options;
+﻿using Microsoft.Extensions.Caching.Distributed;
+using Microsoft.Extensions.Options;
 using MovementGroupStorage.Application.Managers;
 using MovementGroupStorage.Application.Models;
 using MovementGroupStorage.Application.Services;
@@ -32,6 +33,10 @@ namespace Microsoft.Extensions.DependencyInjection
                 .BindConfiguration("CapacityTtlCacheServiceOptions")
                 .ValidateOnStart();
 
+            services.AddOptions<DistributedCacheServiceOptions>()
+                .BindConfiguration("DistributedCacheServiceOptions")
+                .ValidateOnStart();
+
             // Use Chain of Responsibility Design Pattern to validate `CapacityTtlCacheServiceOptions`.
             // Learn more about Strategy Design Pattern: https://refactoring.guru/design-patterns/chain-of-responsibility/csharp/example
             services
@@ -43,6 +48,12 @@ namespace Microsoft.Extensions.DependencyInjection
                 .AddSingleton<IValidateOptions<CapacityTtlCacheServiceOptions>, CapacityTtlCacheServiceOptionsCapacityMinValueValidator>()
                 .AddSingleton<IValidateOptions<CapacityTtlCacheServiceOptions>, CapacityTtlCacheServiceOptionsCapacityMaxValueValidator>();
 
+            // Use Chain of Responsibility Design Pattern to validate `DistributedCacheServiceOptions`.
+            // Learn more about Strategy Design Pattern: https://refactoring.guru/design-patterns/chain-of-responsibility/csharp/example
+            services
+                .AddSingleton<IValidateOptions<DistributedCacheServiceOptions>, DistributedCacheServiceOptionsKnownExpirationTypeValidator>()
+                .AddSingleton<IValidateOptions<DistributedCacheServiceOptions>, DistributedCacheServiceOptionsExpirationSecondsGreaterThanZeroValidator>();
+
             services.AddSingleton(
                 typeof(ICacheService<>),
                 typeof(CapacityTtlMemoryCacheService<>));
@@ -51,6 +62,21 @@ namespace Microsoft.Extensions.DependencyInjection
                 typeof(ICacheService<>),
                 CacheServiceType.Memory,
                 typeof(CapacityTtlMemoryCacheService<>));
+
+            services
+                .AddSingleton<IDataTransformer<DistributedCacheServiceOptions, DistributedCacheEntryOptions>, DistributedCacheServiceOptionsEntryOptionsDataTransformer>()
+                .AddKeyedSingleton<IDataTransformer<DistributedCacheServiceOptions, DistributedCacheEntryOptions>, DistributedCacheEntryOptionsSlidingExpirationDataTransformer>(ExpirationType.Sliding)
+                .AddKeyedSingleton<IDataTransformer<DistributedCacheServiceOptions, DistributedCacheEntryOptions>, DistributedCacheEntryOptionsAbsoluteExpirationDataTransformer>(ExpirationType.Absolute);
+
+            services.AddSingleton<IOptions<DistributedCacheEntryOptions>>(serviceProvider =>
+            {
+                var options = serviceProvider
+                    .GetRequiredService<IOptions<DistributedCacheServiceOptions>>();
+                var transformer = serviceProvider
+                    .GetRequiredService<IDataTransformer<DistributedCacheServiceOptions, DistributedCacheEntryOptions>>();
+
+                return Options.Options.Create(transformer.Transform(options.Value));
+            });
 
             services.AddSingleton<ICacheService<string>, RedisDistributedCacheService>();
             services.AddKeyedSingleton<ICacheService<string>, RedisDistributedCacheService>(CacheServiceType.Distributed);
@@ -62,7 +88,7 @@ namespace Microsoft.Extensions.DependencyInjection
         {
             var resolveBadRequest = () => HttpStatusCode.BadRequest;
 
-            services.AddScoped<IDataManager, SimpleMemoryCasheDataManager>();
+            services.AddScoped<IDataManager, SimpleDistributedCasheDataManager>();
 
             // Register HTTP Status Code resolvers
             // according to Strategy Design Pattern to resolve them in runtime.
