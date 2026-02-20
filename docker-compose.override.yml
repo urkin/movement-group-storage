@@ -8,6 +8,8 @@ services:
       - CapacityTtlCacheServiceOptions__Capacity=10
       - CapacityTtlCacheServiceOptions__CapacityRange__Min=3
       - CapacityTtlCacheServiceOptions__CapacityRange__Max=100
+      - DistributedCacheServiceOptions__ExpirationSeconds=20
+      - DistributedCacheServiceOptions__ExpirationType=Absolute
     ports:
       - "8080"
       - "8081"
