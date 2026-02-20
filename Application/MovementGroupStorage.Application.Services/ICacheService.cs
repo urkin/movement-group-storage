@@ -4,7 +4,7 @@ using MovementGroupStorage.Application.Models;
 namespace MovementGroupStorage.Application.Services
 {
     /// <summary>
-    /// Defines a cache service with the 
+    /// Defines a cache service. 
     /// </summary>
     /// <typeparam name="TKey"></typeparam>
     public interface ICacheService<TKey> where TKey : notnull
