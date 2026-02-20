@@ -11,6 +11,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.22.1" />
+    <PackageReference Include="MongoDB.Driver" Version="3.6.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
   </ItemGroup>
 
@@ -18,6 +19,7 @@
     <ProjectReference Include="..\Application\MovementGroupStorage.Application.Managers\MovementGroupStorage.Application.Managers.csproj" />
     <ProjectReference Include="..\Infrastructure\MovementGroupStorage.Infrastructure.Application.Managers\MovementGroupStorage.Infrastructure.Application.Managers.csproj" />
     <ProjectReference Include="..\Infrastructure\MovementGroupStorage.Infrastructure.Application.Services\MovementGroupStorage.Infrastructure.Application.Services.csproj" />
+    <ProjectReference Include="..\Infrastructure\MovementGroupStorage.Infrastructure.Domain.Repositories\MovementGroupStorage.Infrastructure.Domain.Repositories.csproj" />
     <ProjectReference Include="..\Presentation\MovementGroupStorage.Presentation.Models\MovementGroupStorage.Presentation.Models.csproj" />
   </ItemGroup>
 

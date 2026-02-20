@@ -10,6 +10,8 @@ services:
       - CapacityTtlCacheServiceOptions__CapacityRange__Max=100
       - DistributedCacheServiceOptions__ExpirationSeconds=20
       - DistributedCacheServiceOptions__ExpirationType=Absolute
+      - MongoOptions__Database=movement_group
+      - MongoOptions__ConnectionString=mongodb://mongodb:27017
     ports:
       - "8080"
       - "8081"
@@ -20,18 +22,47 @@ services:
       - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
     depends_on:
       - redis
+      - mongodb
     networks:
-      - backend
+      - data-nw
+      - cache-nw
 
   redis:
     image: redis:7-alpine
     container_name: redis-cache
-    restart: always
     ports:
       - "6379:6379"
     networks:
-      - backend
+      - cache-nw
+
+  mongodb:
+    image: mongo:7
+    container_name: mongo-db
+    ports:
+      - "27017:27017"
+    networks:
+      - data-nw
+    volumes:
+      - mongo-data:/data/db
+
+  mongo-express:
+    image: mongo-express:1
+    container_name: mongo-express
+    ports:
+      - "5081:8081"
+    depends_on:
+      - mongodb
+    networks:
+      - data-nw
+    environment:
+      - ME_CONFIG_BASICAUTH=false
+      - ME_CONFIG_MONGODB_SERVER=mongodb
 
 networks:
-  backend:
+  data-nw:
     driver: bridge
+  cache-nw:
+    driver: bridge
+
+volumes:
+  mongo-data:

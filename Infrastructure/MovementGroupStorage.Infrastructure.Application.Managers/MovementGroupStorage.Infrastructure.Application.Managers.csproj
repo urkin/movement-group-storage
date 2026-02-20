@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Application\MovementGroupStorage.Application.Managers\MovementGroupStorage.Application.Managers.csproj" />
+    <ProjectReference Include="..\..\Domain\MovementGroupStorage.Domain.Repositories\MovementGroupStorage.Domain.Repositories.csproj" />
   </ItemGroup>
 
 </Project>
