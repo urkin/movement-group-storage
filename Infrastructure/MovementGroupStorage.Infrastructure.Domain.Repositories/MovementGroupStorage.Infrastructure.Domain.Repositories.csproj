@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MongoDB.Driver" Version="3.6.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\Domain\MovementGroupStorage.Domain.Repositories\MovementGroupStorage.Domain.Repositories.csproj" />
   </ItemGroup>
 

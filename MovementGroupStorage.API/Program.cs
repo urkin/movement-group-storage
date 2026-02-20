@@ -2,7 +2,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services
     .AddApplicationServices()
-    .AddCacheServices(builder.Configuration);
+    .AddCacheServices(builder.Configuration)
+    .AddApplicationData(builder.Configuration);
 
 builder.Services.Configure<RouteOptions>(options =>
 {
