@@ -92,7 +92,7 @@ namespace Microsoft.Extensions.DependencyInjection
         {
             var resolveBadRequest = () => HttpStatusCode.BadRequest;
 
-            services.AddScoped<IDataManager, MongoDbDataManager>();
+            services.AddScoped<IDataManager, RedisMemoryMongoDbDataManager>();
 
             // Register HTTP Status Code resolvers
             // according to Strategy Design Pattern to resolve them in runtime.
