@@ -9,8 +9,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{A4BF74E2-CF63-4B20-B1C9-029BF685C511}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{A9E6C843-81B2-4084-9187-FB792D51409F}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{497270FF-3F29-4E8B-BB4A-E9A7A9D1ACC3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovementGroupStorage.Application.Models", "Application\MovementGroupStorage.Application.Models\MovementGroupStorage.Application.Models.csproj", "{37EF6091-CEB4-4718-B7AD-BF4F72E8269F}"
@@ -28,8 +26,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovementGroupStorage.Infrastructure.Application.Services", "Infrastructure\MovementGroupStorage.Infrastructure.Application.Services\MovementGroupStorage.Infrastructure.Application.Services.csproj", "{6BAF2E69-AF1E-43D2-B3A1-1C5075597060}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovementGroupStorage.Infrastructure.Domain.Repositories", "Infrastructure\MovementGroupStorage.Infrastructure.Domain.Repositories\MovementGroupStorage.Infrastructure.Domain.Repositories.csproj", "{7798BC4A-9D21-4F7D-94AA-24349FF40163}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovementGroupStorage.Presentation.Models", "Presentation\MovementGroupStorage.Presentation.Models\MovementGroupStorage.Presentation.Models.csproj", "{06E0B9A0-952F-472B-90FE-0D9083C06D97}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovementGroupStorage.API", "MovementGroupStorage.API\MovementGroupStorage.API.csproj", "{13F72C19-ED35-4338-BA30-BA23117E27AE}"
 EndProject
@@ -75,10 +71,6 @@ Global
 		{7798BC4A-9D21-4F7D-94AA-24349FF40163}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7798BC4A-9D21-4F7D-94AA-24349FF40163}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7798BC4A-9D21-4F7D-94AA-24349FF40163}.Release|Any CPU.Build.0 = Release|Any CPU
-		{06E0B9A0-952F-472B-90FE-0D9083C06D97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{06E0B9A0-952F-472B-90FE-0D9083C06D97}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{06E0B9A0-952F-472B-90FE-0D9083C06D97}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{06E0B9A0-952F-472B-90FE-0D9083C06D97}.Release|Any CPU.Build.0 = Release|Any CPU
 		{13F72C19-ED35-4338-BA30-BA23117E27AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{13F72C19-ED35-4338-BA30-BA23117E27AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{13F72C19-ED35-4338-BA30-BA23117E27AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -104,7 +96,6 @@ Global
 		{A0A6E858-C84B-435E-A23A-150289E346C5} = {A4BF74E2-CF63-4B20-B1C9-029BF685C511}
 		{6BAF2E69-AF1E-43D2-B3A1-1C5075597060} = {A4BF74E2-CF63-4B20-B1C9-029BF685C511}
 		{7798BC4A-9D21-4F7D-94AA-24349FF40163} = {A4BF74E2-CF63-4B20-B1C9-029BF685C511}
-		{06E0B9A0-952F-472B-90FE-0D9083C06D97} = {A9E6C843-81B2-4084-9187-FB792D51409F}
 		{614F7157-B064-4947-B5BA-F3A12E3645A0} = {497270FF-3F29-4E8B-BB4A-E9A7A9D1ACC3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution

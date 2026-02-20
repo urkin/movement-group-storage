@@ -20,7 +20,6 @@
     <ProjectReference Include="..\Infrastructure\MovementGroupStorage.Infrastructure.Application.Managers\MovementGroupStorage.Infrastructure.Application.Managers.csproj" />
     <ProjectReference Include="..\Infrastructure\MovementGroupStorage.Infrastructure.Application.Services\MovementGroupStorage.Infrastructure.Application.Services.csproj" />
     <ProjectReference Include="..\Infrastructure\MovementGroupStorage.Infrastructure.Domain.Repositories\MovementGroupStorage.Infrastructure.Domain.Repositories.csproj" />
-    <ProjectReference Include="..\Presentation\MovementGroupStorage.Presentation.Models\MovementGroupStorage.Presentation.Models.csproj" />
   </ItemGroup>
 
 </Project>
