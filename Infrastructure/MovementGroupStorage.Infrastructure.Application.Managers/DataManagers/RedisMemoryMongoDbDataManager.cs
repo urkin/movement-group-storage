@@ -108,7 +108,10 @@ namespace MovementGroupStorage.Infrastructure.Application.Managers
                 var result = await cacheService.GetAsync<dynamic>(key);
                 if (result.Status == ApplicationServiceResultStatus.Succeeded)
                 {
-                    return result.Data;
+                    var data = result.Data is JsonElement element
+                        ? _dataTransformer.Transform(element)
+                        : result.Data;
+                    return data;
                 }
             }
 
