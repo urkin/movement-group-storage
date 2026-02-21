@@ -13,10 +13,10 @@ namespace MovementGroupStorage.API.Controllers
             _dataManager = dataManager ?? throw new ArgumentNullException(nameof(dataManager));
         }
 
-        [HttpGet]
-        public async Task<IActionResult> Get(string key)
+        [HttpGet("{id}")]
+        public async Task<IActionResult> Get(string id)
         {
-            var result = await _dataManager.FetchAsync(key);
+            var result = await _dataManager.FetchAsync(id);
             var response = ResolveResponse(result);
             return response;
         }
